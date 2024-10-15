@@ -1,0 +1,60 @@
+{
+  "name": "Simple Contact Form",
+  "description": "Simple Contact Form",
+  "license": "MIT",
+  "author": "Valgard Trontheim",
+  "version": "1.0.0",
+  "scope": "site",
+  "minimumPubliiVersion": "0.46.0",
+  "useCustomCssForOptions": false,
+  "config": [
+    {
+      "name": "script",
+      "label": "URL to mailing script",
+      "note": "",
+      "group": "Backend",
+      "type": "text",
+      "default": "https://example.com/mail.php"
+    },
+    {
+      "name": "menu",
+      "label": "Menu",
+      "note": "",
+      "group": "Menu",
+      "type": "text",
+      "default": "footerMenu"
+    },
+    {
+      "name": "menuPosition",
+      "label": "Menu position",
+      "note": "",
+      "group": "Menu",
+      "type": "text",
+      "default": "1"
+    },
+    {
+      "name": "recaptchaSiteKey",
+      "label": "Site key",
+      "note": "",
+      "group": "Google reCAPTCHA v3",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "name": "recaptchaParameterName",
+      "label": "Parameter name",
+      "note": "",
+      "group": "Google reCAPTCHA v3",
+      "type": "text",
+      "default": "g-recaptcha-response"
+    },
+    {
+      "name": "recaptchaActionName",
+      "label": "Action name",
+      "note": "",
+      "group": "Google reCAPTCHA v3",
+      "type": "text",
+      "default": "CONTACT_FORM"
+    }
+  ]
+}
