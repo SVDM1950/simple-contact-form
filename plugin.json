@@ -3,7 +3,7 @@
   "description": "Simple Contact Form",
   "license": "MIT",
   "author": "Valgard Trontheim",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scope": "site",
   "minimumPubliiVersion": "0.46.0",
   "useCustomCssForOptions": false,
@@ -31,6 +31,22 @@
       "group": "Menu",
       "type": "text",
       "default": "1"
+    },
+    {
+      "name": "contactFeaturedImage",
+      "label": "Featured image",
+      "note": "",
+      "group": "Content",
+      "type": "upload",
+      "default": null
+    },
+    {
+      "name": "contactContent",
+      "label": "Content",
+      "note": "",
+      "group": "Content",
+      "type": "wysiwyg",
+      "default": null
     },
     {
       "name": "recaptchaSiteKey",
