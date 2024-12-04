@@ -2,7 +2,7 @@
   "name": "Simple Contact Form",
   "description": "Simple Contact Form",
   "license": "MIT",
-  "author": "Valgard Trontheim",
+  "author": "Valgard Trontheim <https://trontheim.com/>",
   "version": "1.1.2",
   "scope": "site",
   "minimumPubliiVersion": "0.46.0",
@@ -47,6 +47,14 @@
       "group": "Content",
       "type": "wysiwyg",
       "default": null
+    },
+    {
+      "name": "recaptchaEnabled",
+      "label": "Enabled",
+      "note": "",
+      "group": "Google reCAPTCHA v3",
+      "type": "checkbox",
+      "default": false
     },
     {
       "name": "recaptchaSiteKey",
