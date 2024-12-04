@@ -3,7 +3,7 @@
   "description": "Simple Contact Form for Publii",
   "license": "MIT",
   "author": "Valgard Trontheim",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "dependencies": {
     "@jimp/custom": "0.22.10",
     "@jimp/plugin-cover": "0.22.10",

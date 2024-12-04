@@ -53,7 +53,7 @@ class SimpleContactForm {
     generateContactForm(rendererInstance, output, globalContext, context) {
         this.rendererInstance = rendererInstance;
 
-        if (globalContext.context.length !== 1 || globalContext.context[0] !== 'index') {
+        if (rendererInstance.menuContext.length !== 1 || (rendererInstance.menuContext[0] !== 'frontpage' && rendererInstance.menuContext[0] !== 'blogpage')) {
             return output;
         }
 
