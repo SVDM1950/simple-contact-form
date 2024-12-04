@@ -1,3 +1,4 @@
+const fs = require('fs-extra');
 const path = require('path');
 const sizeOf = require('image-size');
 const URLHelper = require('./helpers/url');
@@ -93,11 +94,18 @@ class SimpleContactForm {
         }
 
         let content = this.rendererInstance.renderTemplate(compiledTemplate, context, globalContext, inputFile);
-        this.rendererInstance.templateHelper.saveOutputFile(pageSlug + suffix, content);
+        this.saveOutputFile(pageSlug + suffix, content);
 
         this.rendererInstance.menuContext = oldMenuContext
 
         return output;
+    }
+
+    saveOutputFile(fileName, content) {
+        let filePath = path.join(this.rendererInstance.outputDir, fileName);
+
+        fs.ensureDirSync(path.parse(filePath).dir);
+        fs.outputFileSync(filePath, content, 'utf-8');
     }
 
     getFeaturedImages(imageFilename, featuredImageData) {
