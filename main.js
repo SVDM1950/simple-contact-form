@@ -15,6 +15,7 @@ class SimpleContactForm {
     addModifiers() {
         this.API.addModifier('menuStructure', this.modifyMenuStructure, 1, this);
         this.API.addModifier('htmlOutput', this.generateContactForm, 1, this);
+        this.API.addModifier('htmlOutput', this.replaceInternalLink, 1, this);
     }
 
     modifyMenuStructure(rendererInstance, output) {
@@ -97,6 +98,25 @@ class SimpleContactForm {
         this.saveOutputFile(pageSlug + suffix, content);
 
         this.rendererInstance.menuContext = oldMenuContext
+
+        return output;
+    }
+
+    replaceInternalLink(rendererInstance, output, globalContext, context) {
+        this.rendererInstance = rendererInstance;
+
+        const translations = this.rendererInstance.translations.user.contact ?? this.rendererInstance.translations.theme.contact;
+
+        let contactSlug = translations.menu.slug;
+
+        let url = '#INTERNAL_LINK#/contact';
+        let link = this.rendererInstance.siteConfig.domain + '/' + contactSlug;
+
+        if (this.rendererInstance.previewMode || this.rendererInstance.siteConfig.advanced.urls.addIndex) {
+            link = link + '/index.html';
+        }
+
+        output = output.split(url).join(link);
 
         return output;
     }
